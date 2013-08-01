@@ -1,0 +1,33 @@
+<?php if($this->getData('ipaymu_has_error')){?>
+<ul class="messages"><li class="error-msg"><ul><li><span><?php echo $this->getData('ipaymu_has_error');?></span></li></ul></li></ul>
+<p>
+    <strong><?php echo $this->__('Please click %shere%s to try again!', '<a href="'.Mage::getUrl('ipaymu/index/redirect', array('_current' => true)).'">','</a>')?></strong>  
+</p>
+<?php }else{?>
+<script type="text/javascript">
+    function openInaDialog(){
+        win = new Window({
+            className: "bluelighting", 
+            title: "<?php echo $this->__('Ipaymu')?>", 
+            width:400, 
+            height:100, 
+            destroyOnClose: true,
+            closable:false,
+            resizable:true,
+            minimizable:false,
+            maximizable:false,
+            top:20
+        });
+        var html = '<p>&nbsp;</p><h3 style="color:red"><?php echo Mage::helper('ipaymu')->__('Please click %shere%s to process your payment at ipaymu','<a href="'.$this->getData('ipaymu_url').'" target="_blank" onclick="window.location.href=\\\''.( $this->getRequest()->getParam('__from') == sha1('ipaymu_checkout_process') ? Mage::getUrl('ipaymu/index/success') : Mage::getUrl('customer/account')).'\\\'">','</a>')?></h3>';
+        win.setZIndex(1000);
+        win.getContent().update(html); 
+        win.showCenter(true,30);
+    }
+    
+    
+    Event.observe(window, 'load', function() {
+        openInaDialog();
+        //document.getElementById('inapay_form').submit();
+    });
+</script>
+<?php } ?>
