@@ -6,10 +6,7 @@ Compatible with Magento V1.5, v1.6 and v1.7
 [Ipaymu](http://www.ipaymu.com) is Indonesia Online Payment, connected with more than 21,000 ATM (137 banks)
 
 ### Installation
-The extension submission to magento connect still in progress. 
-Currently the only way to install this extension is by downloading 
-the zip file of this repo then extract it to your magento installation folder. 
-Then open your magento admin area, update the configuration from menu System > Configuration > Payment Method
+Follow installation instruction at [http://www.magentocommerce.com/magento-connect/catalog/product/view/id/18248/s/ipaymu-payment-gateway-3083](http://www.magentocommerce.com/magento-connect/catalog/product/view/id/18248/s/ipaymu-payment-gateway-3083)
 ### Contribute to Development
 To contribute in development or to start create your own version please fork this repository first. 
 Please follow [github instruction](https://help.github.com/articles/fork-a-repo) how to fork repo.
